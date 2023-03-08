@@ -1,0 +1,71 @@
+@import './globals.scss';
+
+.collapsed {
+  width: 5.6rem;
+  height: 100vh;
+
+  .sidebarContainer {
+    background-color: $darkGray;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .sidebarUpperItemContainer {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      .logo {
+        width: 24px;
+        height: auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .sidebarButton {
+        background: none;
+        border-radius: 50%;
+        border: none;
+        padding: 1rem;
+        transition: all ease-in-out 0.2s;
+        cursor: pointer;
+        .sidebarIcon {
+          color: white;
+        }
+      }
+
+      .sidebarButton:hover {
+        background-color: $lightGray;
+      }
+
+      .selected {
+        background-color: $lightGray;
+        padding: 1rem;
+        border-radius: 50%;
+        border: none;
+      }
+    }
+
+    .logoutButton {
+      background: none;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+      border: none;
+      padding: 1rem;
+      transition: all ease-in-out 0.2s;
+      cursor: pointer;
+      .sidebarIcon {
+        color: white;
+      }
+    }
+
+    .logoutButton:hover {
+      background-color: $lightGray;
+    }
+  }
+}
