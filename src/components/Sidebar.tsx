@@ -14,12 +14,53 @@ import {
   faChartBar,
   faMap,
 } from '@fortawesome/free-regular-svg-icons';
+import { useRouter } from 'next/router';
 
 type Props = {
   expanded: boolean;
 };
 
 const Sidebar = ({ expanded }: Props) => {
+  const router = useRouter();
+
+  const sidebarItems = [
+    {
+      title: 'Main Menu',
+      icon: faBorderAll,
+      href: '/',
+    },
+    {
+      title: 'Projects',
+      icon: faMap,
+      href: '/projects',
+    },
+    {
+      title: 'Account',
+      icon: faUser,
+      href: '/account',
+    },
+    {
+      title: 'Calendar',
+      icon: faCalendar,
+      href: '/calendar',
+    },
+    {
+      title: 'Statistics',
+      icon: faChartBar,
+      href: '/statistics',
+    },
+    {
+      title: 'Cloud',
+      icon: faCloudArrowUp,
+      href: '/cloud',
+    },
+    {
+      title: 'Settings',
+      icon: faSliders,
+      href: '/settings',
+    },
+  ];
+
   let stateOfSidebar;
 
   const [selectedButtonNumber, setSelectedButtonNumber] = useState(0);
@@ -35,89 +76,26 @@ const Sidebar = ({ expanded }: Props) => {
       <div className="sidebarContainer">
         <div className="sidebarUpperItemContainer">
           <Image src={logo} alt="Scrum Logo" className="logo" />
-          <button
-            title="menu"
-            className={`sidebarButton ${
-              selectedButtonNumber === 0 && 'selected'
-            }`}
-            onClick={() => {
-              setSelectedButtonNumber(0);
-            }}
-          >
-            <FontAwesomeIcon icon={faBorderAll} className="fa-xl sidebarIcon" />
-          </button>
-          <button
-            title="account"
-            className={`sidebarButton ${
-              selectedButtonNumber === 1 && 'selected'
-            }`}
-            onClick={() => {
-              setSelectedButtonNumber(1);
-            }}
-          >
-            <FontAwesomeIcon icon={faUser} className="fa-xl sidebarIcon" />
-          </button>
-          <button
-            title="calendar"
-            className={`sidebarButton ${
-              selectedButtonNumber === 2 && 'selected'
-            }`}
-            onClick={() => {
-              setSelectedButtonNumber(2);
-            }}
-          >
-            <FontAwesomeIcon icon={faCalendar} className="fa-xl sidebarIcon" />
-          </button>
-          <button
-            title="statistics"
-            className={`sidebarButton ${
-              selectedButtonNumber === 3 && 'selected'
-            }`}
-            onClick={() => {
-              setSelectedButtonNumber(3);
-            }}
-          >
-            <FontAwesomeIcon icon={faChartBar} className="fa-xl sidebarIcon" />
-          </button>
-          <button
-            title="upload"
-            className={`sidebarButton ${
-              selectedButtonNumber === 4 && 'selected'
-            }`}
-            onClick={() => {
-              setSelectedButtonNumber(4);
-            }}
-          >
-            <FontAwesomeIcon
-              icon={faCloudArrowUp}
-              className="fa-xl sidebarIcon"
-            />
-          </button>
-          <button
-            title="view"
-            className={`sidebarButton ${
-              selectedButtonNumber === 5 && 'selected'
-            }`}
-            onClick={() => {
-              setSelectedButtonNumber(5);
-            }}
-          >
-            <FontAwesomeIcon icon={faMap} className="fa-xl sidebarIcon" />
-          </button>
-          <button
-            title="settings"
-            className={`sidebarButton ${
-              selectedButtonNumber === 6 && 'selected'
-            }`}
-            onClick={() => {
-              setSelectedButtonNumber(6);
-            }}
-          >
-            <FontAwesomeIcon icon={faSliders} className="fa-xl sidebarIcon" />
-          </button>
+          {sidebarItems.map((item, itemIdx) => {
+            return (
+              <button
+                key={itemIdx}
+                title={item.title}
+                className={`sidebarButton`}
+                onClick={() => {
+                  router.push(item.href);
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={item.icon}
+                  className="fa-xl sidebarIcon"
+                />
+              </button>
+            );
+          })}
         </div>
         <button
-          title="logout"
+          title="Logout"
           className={`logoutButton ${selectedButtonNumber === 7 && 'selected'}`}
           onClick={() => {
             setSelectedButtonNumber(7);
