@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
 import logo from '../assets/img/Logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -63,8 +62,6 @@ const Sidebar = ({ expanded }: Props) => {
 
   let stateOfSidebar;
 
-  const [selectedButtonNumber, setSelectedButtonNumber] = useState(0);
-
   if (!expanded) {
     stateOfSidebar = 'collapsed';
   } else {
@@ -81,7 +78,9 @@ const Sidebar = ({ expanded }: Props) => {
               <button
                 key={itemIdx}
                 title={item.title}
-                className={`sidebarButton`}
+                className={`sidebarButton ${
+                  router.asPath === item.href && 'selected'
+                }`}
                 onClick={() => {
                   router.push(item.href);
                 }}
@@ -94,13 +93,7 @@ const Sidebar = ({ expanded }: Props) => {
             );
           })}
         </div>
-        <button
-          title="Logout"
-          className={`logoutButton ${selectedButtonNumber === 7 && 'selected'}`}
-          onClick={() => {
-            setSelectedButtonNumber(7);
-          }}
-        >
+        <button title="Logout" className={`logoutButton`}>
           <FontAwesomeIcon
             icon={faRightFromBracket}
             className="fa-xl sidebarIcon"
