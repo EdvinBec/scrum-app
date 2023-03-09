@@ -1,11 +1,19 @@
 $darkGray: #1c1d22;
 $mediumGray: #222327;
 $lightGray: #2a2b2f;
+$textColor: #fff;
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800&display=swap');
 
 body {
   margin: 0;
   padding: 0;
   background-color: $lightGray;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .layout {
