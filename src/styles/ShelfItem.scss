@@ -1,0 +1,119 @@
+@import './globals.scss';
+.projectsShelf {
+  width: 80%;
+  margin-top: 2rem;
+  .upperRow {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Exo 2', sans-serif;
+    color: $textColor;
+
+    h4 {
+      font-weight: 500;
+    }
+
+    .openMenuListButton {
+      background: none;
+      border: none;
+      margin-right: 0.6rem;
+      cursor: pointer;
+
+      .caret-icon {
+        color: $textColor;
+      }
+    }
+  }
+  .bottomShelfPart {
+    display: flex;
+    margin-top: 1rem;
+    height: 10.5rem;
+
+    .verticalLine {
+      height: 10.5rem;
+      width: 3px;
+      background-color: $textColor;
+      opacity: 10%;
+    }
+    .shelfItem {
+      padding: 0.3rem 0;
+      display: flex;
+      gap: 1rem;
+      height: 2rem;
+      align-items: center;
+
+      .indicatorLine {
+        width: 1rem;
+        height: 3px;
+        background-color: $textColor;
+        opacity: 10%;
+      }
+
+      button {
+        color: $textColor;
+        opacity: 50%;
+        font-family: 'Exo 2', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: all ease-in-out 0.2s;
+      }
+
+      button:hover {
+        opacity: 80%;
+      }
+    }
+  }
+
+  /*
+    Animations
+  */
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 0;
+    }
+    90% {
+      height: 0;
+    }
+    100% {
+      opacity: 0;
+      height: 0;
+      margin-top: 0;
+    }
+  }
+
+  .fadeOut {
+    animation: fadeOut 0.6s ease-out forwards;
+    overflow: hidden;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      height: 0;
+      transform: translateY(-2);
+    }
+    70% {
+      opacity: 1;
+    }
+    90% {
+      height: 10.5rem;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      height: 10.5rem;
+      margin-top: 1rem;
+    }
+  }
+
+  .fadeIn {
+    animation: fadeIn 0.6s ease-in-out forwards;
+    overflow: hidden;
+  }
+}
