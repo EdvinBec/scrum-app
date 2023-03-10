@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ShelfItem from './ShelfItem';
+import ColorMode from './ColorMode';
 
 const Shelf = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -74,6 +75,7 @@ const Shelf = () => {
         </div>
         <ShelfItem heading="Projects" items={projects} />
         <ShelfItem heading="Tasks" items={tasks} />
+        <ColorMode />
       </div>
     </div>
   );
