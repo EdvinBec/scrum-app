@@ -2,6 +2,7 @@ import '../styles/globals.scss';
 import '../styles/Sidebar.scss';
 import '../styles/Shelf.scss';
 import '../styles/ShelfItem.scss';
+import '../styles/ColorMode.scss';
 import type { AppProps } from 'next/app';
 import Layout from 'components/Layout';
 import Sidebar from 'components/Sidebar';
