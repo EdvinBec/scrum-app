@@ -9,6 +9,8 @@
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1.5rem;
+
   button {
     font-family: 'Exo 2', sans-serif;
     color: rgba($textColor, $alpha: 0.5);
@@ -22,15 +24,18 @@
     gap: 0.3rem;
     display: flex;
     transition: all ease-in-out 0.2s;
+
     .colorModeicon {
       color: $textColor;
     }
   }
+
   .active {
     color: $textColor;
     background-color: rgba($textColor, $alpha: 0.06);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   }
+
   button:hover {
     color: $textColor;
     cursor: pointer;
