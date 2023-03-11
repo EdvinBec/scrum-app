@@ -61,20 +61,22 @@ const Shelf = () => {
           !collapsed && 'fadeInContent'
         }`}
       >
-        <div className="topRow">
-          <h1 className="shelfTitle">Projects</h1>
-          <button
-            className="closeShelfMenu"
-            title="Close"
-            onClick={() => {
-              setCollapsed(true);
-            }}
-          >
-            <FontAwesomeIcon icon={faXmark} color={'#fff'} />
-          </button>
+        <div className="container">
+          <div className="topRow">
+            <h1 className="shelfTitle">Projects</h1>
+            <button
+              className="closeShelfMenu"
+              title="Close"
+              onClick={() => {
+                setCollapsed(true);
+              }}
+            >
+              <FontAwesomeIcon icon={faXmark} color={'#fff'} />
+            </button>
+          </div>
+          <ShelfItem heading="Projects" items={projects} />
+          <ShelfItem heading="Tasks" items={tasks} />
         </div>
-        <ShelfItem heading="Projects" items={projects} />
-        <ShelfItem heading="Tasks" items={tasks} />
         <ColorMode />
       </div>
     </div>

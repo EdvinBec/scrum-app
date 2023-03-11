@@ -7,34 +7,43 @@
 
   .contentBox {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 
-    .topRow {
-      width: 80%;
+    .container {
+      width: 100%;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      margin-top: 1.5rem;
 
-      .closeShelfMenu {
-        background-color: $lightGray;
-        border-radius: 50%;
-        border: none;
-        padding: 0.7rem 1rem;
-        margin-top: 0.5rem;
-        transition: all ease-in-out 0.2s;
-        cursor: pointer;
-      }
+      .topRow {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.5rem;
 
-      .closeShelfMenu:hover {
-        transform: scale(1.1);
-      }
+        .closeShelfMenu {
+          background-color: $lightGray;
+          border-radius: 50%;
+          border: none;
+          padding: 0.7rem 1rem;
+          margin-top: 0.5rem;
+          transition: all ease-in-out 0.2s;
+          cursor: pointer;
+        }
 
-      h1 {
-        font-family: 'Exo 2', sans-serif;
-        color: $textColor;
+        .closeShelfMenu:hover {
+          transform: scale(1.1);
+        }
+
+        h1 {
+          font-family: 'Exo 2', sans-serif;
+          color: $textColor;
+        }
       }
     }
   }
